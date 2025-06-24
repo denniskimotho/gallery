@@ -7,6 +7,11 @@ pipeline {
     //         sh 'git clone https://github.com/denniskimotho/gallery.git'
     //     }
     // }
+    stage('Test Git') {
+    steps {
+        sh 'git --version'
+    }
+}
         stage('Checkout') {
             steps {
                 checkout scm  // Uses SCM settings from Jenkins job
