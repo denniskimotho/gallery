@@ -35,5 +35,20 @@ pipeline {
       }
     }
   }
+
+   post {
+        
+        failure {
+            slackSend(
+                channel: '#yourname_ip1',
+                message: ":x: FAILURE - Build ${BUILD_NUMBER}\n" +
+                         "Build Log:  console",
+                color: 'danger'
+            )
+            emailext body: 'Tests failed in build ${BUILD_NUMBER}', 
+                     subject: 'Test Failure', 
+                     to: 'denniskimotho222@gmail.com'
+        }
+    }
   
 }
