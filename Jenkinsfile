@@ -1,5 +1,11 @@
 pipeline {
   agent any
+  tools{
+     {nodejs 'NodeJS'}
+  }
+  triggers {
+        pollSCM('* * * * *')  
+    }
   
   stages {
     // stage('Clone repo'){
@@ -21,7 +27,4 @@ pipeline {
     }
   }
   
-  triggers {
-    pollSCM('* * * * *') 
- }
 }
