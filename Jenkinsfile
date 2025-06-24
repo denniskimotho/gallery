@@ -2,11 +2,11 @@ pipeline {
   agent any
   
   stages {
-    stage('Clone repo'){
-        steps{
-            sh 'git clone https://github.com/denniskimotho/gallery.git'
-        }
-    }
+    // stage('Clone repo'){
+    //     steps{
+    //         sh 'git clone https://github.com/denniskimotho/gallery.git'
+    //     }
+    // }
         
     stage('Setup') {
       steps {
